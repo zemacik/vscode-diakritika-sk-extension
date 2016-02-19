@@ -12,7 +12,8 @@
     ],
     "activationEvents": [
         "onCommand:extension.addDiacritics",
-        "onCommand:extension.removeDiacritics"
+        "onCommand:extension.removeDiacritics",
+        "onCommand:extension.changeDictionary"
     ],
     "main": "./out/src/extension",
     "contributes": {
@@ -24,6 +25,20 @@
             {
                 "command": "extension.removeDiacritics",
                 "title": "Remove Diacritics"
+            },
+            {
+                "command": "extension.changeDictionary",
+                "title": "Change Dictionary"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.addDiacritics",
+                "key": "Alt+U"
+            },
+            {
+                "command": "extension.removeDiacritics",
+                "key": "Alt+Shift+U"
             }
         ]
     },

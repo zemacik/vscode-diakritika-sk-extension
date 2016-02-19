@@ -10,17 +10,23 @@ import ArrayStream = require('arraystream');
 export default class DiacriticsAdder {
     private _ignoredWordList: string[];
     private _dictionaryPath: string;
-    private dictionary: Object = {};
+    private _dictionary: Object = {};
+    private _activeDictionary: string;
+
     public isInitialized: boolean = false;
 
-    constructor(ignoredWordList?: string[], dictionaryPath?: string) {
+    constructor(dictionary: string, ignoredWordList?: string[], dictionaryPath?: string) {
         this._ignoredWordList = ignoredWordList || [];
         this._dictionaryPath = dictionaryPath || './resources';
+        this._activeDictionary = dictionary || 'SK';
     }
 
     public initialize(): Stream {
         if (!this.isInitialized) {
-            let rstream = fs.createReadStream(path.resolve(this._dictionaryPath, "dict_SK.txt"))
+
+            var dictionaryPath = this._dictionaryPath + "/dict_" + this._activeDictionary + ".txt";
+
+            let rstream = fs.createReadStream(dictionaryPath)
                 .pipe(csv.parse({ headers: true, delimiter: '\t' }))
                 .transform(row => {
                     return {
@@ -32,9 +38,9 @@ export default class DiacriticsAdder {
                 .on("readable", () => {
                     var row;
                     while (null !== (row = rstream.read())) {
-                        var rv = this.dictionary[row.w_n];
+                        var rv = this._dictionary[row.w_n];
                         if (!rv)
-                            this.dictionary[row.w_n] = [{ w: row.w, n: row.n }];
+                            this._dictionary[row.w_n] = [{ w: row.w, n: row.n }];
                         else {
                             var newObj = { w: row.w, n: row.n };
                             if (rv[0].n < row.n)
@@ -52,7 +58,7 @@ export default class DiacriticsAdder {
             return rstream;
         }
         else {
-            return new ArrayStream(this.dictionary);
+            return new ArrayStream(this._dictionary);
         }
     }
 
@@ -63,7 +69,16 @@ export default class DiacriticsAdder {
         return this.transform(text);
     }
 
+    public dictionaryChanged(dictionary: string) {
+        this._dictionary = {};
+        this.isInitialized = false;
+        this._activeDictionary = dictionary || 'SK';
+    }
+
     private transform(text: string): string {
+        if (!text)
+            return null;
+
         var matches = text.match(/(\b[^\s]+\b)/g);
 
         for (var i = 0; i < matches.length; i++) {
@@ -91,7 +106,7 @@ export default class DiacriticsAdder {
             return;
 
         var word_n = DiacriticsRemover.remove(word).toLowerCase();
-        var dictValue = this.dictionary[word_n];
+        var dictValue = this._dictionary[word_n];
 
         if (dictValue == null)
             return null;
