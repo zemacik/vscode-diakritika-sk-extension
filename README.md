@@ -1,6 +1,4 @@
-# README
-
-## Diakritika (SK)
+# Diakritika (SK) - Visual studio code extension
 
 Visual studio code extension able to add/remove diacritics to selected text 
 
