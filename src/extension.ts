@@ -21,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
     console.log('Activating extension - "vscode-diakritika-sk-extension"');
 
     settings = readSettings();
-    diacriticsAdder = new DiacriticsAdder(settings.dictionary, settings.ignoreWordsList);
+    diacriticsAdder = new DiacriticsAdder(settings.dictionary, settings.ignoreWordsList, context.extensionPath + '/resources');
 
     let addDiacriticsDisposable = vscode.commands.registerCommand('extension.addDiacritics', addDiacritics);
     context.subscriptions.push(addDiacriticsDisposable);
@@ -108,7 +108,7 @@ function readSettings(): IDiacriticsSettings {
 function updateSettings(): void {
     if (!vscode.workspace.rootPath)
         return;
-        
+
     fs.writeFileSync(CONFIGFILE, JSON.stringify(settings));
 }
 
@@ -126,7 +126,7 @@ function changeDictionary() {
     //     }
     // }
     //items.splice(index, 1);
-    
+
     // replace the text with the selection
     vscode.window.showQuickPick(items).then((selection) => {
         if (!selection)

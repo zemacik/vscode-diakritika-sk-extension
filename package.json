@@ -2,7 +2,7 @@
     "name": "vscode-diakritika-sk-extension",
     "displayName": "Diakritika (SK)",
     "description": "Adds and removes diacritics to selected text (Slovak edition)",
-    "version": "1.0.2",
+    "version": "1.0.6",
     "publisher": "MichalKrchnavy",
     "author": {
         "name": "Michal Krchňavý"

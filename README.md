@@ -7,6 +7,7 @@ Visual studio code extension able to add/remove diacritics to selected text
 - Large dictionary one with top 1 800 000 most used words
 
 ### Installation
+
 1. Install Visual Studio Code
 2. Launch Code
 3. Ppen the command palette (press `F1`)
@@ -27,12 +28,10 @@ or
 2. Press F1
 3. Call `Remove Diacritics` command to remove diacritics
 
-
 ### Keyboard shortcuts
 
 - `Alt+U` to Add Diacritics
 - `Alt+Shift+U` to Remove Diacritics
-
 
 ###Change dictionary:
 
