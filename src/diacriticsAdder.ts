@@ -1,11 +1,12 @@
 'use strict';
 
-import DiacriticsRemover = require('diacritics');
-import csv = require("fast-csv");
 import fs = require("fs");
 import path = require("path");
 import { Stream } from "stream";
-import ArrayStream = require('arraystream');
+
+var ArrayStream = require('arraystream');
+var DiacriticsRemover = require('diacritics');
+var csv = require("fast-csv");
 
 export default class DiacriticsAdder {
     private _ignoredWordList: string[];

@@ -2,14 +2,22 @@
     "name": "vscode-diakritika-sk-extension",
     "displayName": "Diakritika (SK)",
     "description": "Adds and removes diacritics to selected text (Slovak edition)",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "publisher": "MichalKrchnavy",
+    "author": {
+        "name": "Michal Krchňavý"
+    },
     "engines": {
         "vscode": "^0.10.6"
     },
     "categories": [
         "Other"
     ],
+    "icon": "assets/icon.png",
+    "galleryBanner": {
+        "color": "#5c2d91",
+        "theme": "dark"
+    },
     "activationEvents": [
         "onCommand:extension.addDiacritics",
         "onCommand:extension.removeDiacritics",
@@ -59,5 +67,10 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/zemacik/vscode-diakritika-sk-extension.git"
+    },
+    "homepage": "https://github.com/zemacik/vscode-diakritika-sk-extension/blob/master/README.md",
+    "bugs": {
+        "url": "https://github.com/zemacik/vscode-diakritika-sk-extension/issues",
+        "email": "michal@krchnavy.sk"
     }
 }

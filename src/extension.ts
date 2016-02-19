@@ -1,8 +1,8 @@
 'use strict';
 import * as vscode from 'vscode';
 import fs = require('fs');
-import DiacriticsRemover = require('diacritics');
 import DiacriticsAdder from './diacriticsAdder';
+var DiacriticsRemover = require('diacritics');
 
 interface IDiacriticsSettings {
     dictionary: string;
