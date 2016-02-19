@@ -19,11 +19,11 @@
         "commands": [
             {
                 "command": "extension.addDiacritics",
-                "title": "Add diacritics"
+                "title": "Add Diacritics"
             },
             {
                 "command": "extension.removeDiacritics",
-                "title": "Remove diacritics"
+                "title": "Remove Diacritics"
             }
         ]
     },

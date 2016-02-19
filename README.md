@@ -1,13 +1,21 @@
 # README
-## This is the README for your extension "vscode-diakritika-sk-extension" 
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
 
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
+## Diakritika (SK)
 
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+Visual studio code extension able to add/remove diacritics to selected text 
+
+- dictionary of top most 50 000 words included   
+
+How to use:
+
+1. Select text on your editor window
+2. Press F1
+3. Call `Add Diacritics` command to add diacritics
+
+or
+
+1. Select text on your editor window
+2. Press F1
+3. Call `Remove Diacritics` command to remove diacritics
 
 ** Enjoy!**
