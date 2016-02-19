@@ -35,8 +35,8 @@ or
 Large dictionary takes about 15 seconds to load (just before the first use ). Please be patient. 
 
 ###Demonstration image
-[[https://github.com/zemacik/repository/blob/master/assets/Animation.gif|alt=demoimage]]
+![Demo image](https://github.com/zemacik/vscode-diakritika-sk-extension/master/assets/Animation.gif)
 
 Detailed description about the dictionaries can be found on [sk_wordlist](http://p.brm.sk/sk_wordlist/) information page. created by @psycho_brm ([Twitter](https://twitter.com/psycho_brm)). 
 
-** Enjoy!**
+** Enjoy! **
